@@ -10,7 +10,8 @@ var FormView = {
     // Stop the browser from submitting the form
     event.preventDefault();
     
-    MessagesView.renderMessage()
+
+     Parse.create(MessagesView.renderMessage(), Parse((data))
   },
 
   setStatus: function(active) {

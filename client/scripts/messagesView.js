@@ -1,5 +1,5 @@
 var MessagesView = {
-
+  $username: $('.username'),
   $chats: $('#chats'),
   $message: $('#message'),
 
@@ -8,8 +8,11 @@ var MessagesView = {
   },
 
   renderMessage: function() {
-    console.log(message)
-      this.$chats.append(MessageView.render({username: message.username, val: message.text})); 	
+      
+      this.$chats.prepend(MessageView.render({username: window.location.search.slice(10), text: this.$message.val()})); 
+      Parse.create(MessagesView.renderMessage($message))
+        
+
   }
 
 };
